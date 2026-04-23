@@ -1,10 +1,18 @@
 export const site = {
   name: "Subith",
   role: "Full Stack Developer",
+  secondaryRole: "UI/UX Designer",
   tagline: "MERN stack · React · TypeScript · NestJS",
-  /** Hero background — place your photo at `public/me-4.jpg` (or change the path). */
-  portraitSrc: "/Me.png",
+  /** Primary hero background image (Image A). */
+  heroBackgroundPrimarySrc: "/Me1.png",
+  /** Secondary hero background image (Image B) for scroll transition. */
+  heroBackgroundSecondarySrc: "/Me.png",
+  /** Backward-compatible alias used by older components. */
+  portraitSrc: "/Me1.png",
   contactEmail: "subithpallikkal17@gmail.com",
+  /** Put your resume file at `public/resume/Subith-Resume.pdf` */
+  resumeSrc: "/resume/SUBITH-RESUME.pdf",
+  resumeDownloadName: "Subith-Resume.pdf",
 };
 
 export const about =
@@ -86,6 +94,8 @@ export type ProjectItem = {
   subtitle: string;
   /** Live site or repo URL — omit until you have a public link */
   url?: string;
+  /** Project preview image from `public/` (example: `/projects/my-app.png`) */
+  previewImageSrc?: string;
   bullets: string[];
 };
 
@@ -93,23 +103,28 @@ export const projects: ProjectItem[] = [
   {
     title: "Al-Mango",
     subtitle: "Food Menu Web App",
+    previewImageSrc: "/public/projects/almango.png",
     bullets: [
       "Enhanced user experience, resulting in increased order efficiency through an intuitive POS interface design.",
       "Increased sales by streamlining menu access and enhancing upselling opportunities.",
       "Modernized the café ordering process while aligning with goals for customer engagement and profitability.",
     ],
+    url: "https://almango.netlify.app/",
   },
   {
     title: "Go-miles",
     subtitle: "Travel agency website",
+    previewImageSrc: "/public/projects/gomiles.png",
     bullets: [
       "Crafted an intuitive, visually appealing frontend for a dynamic travel agency.",
       "Focused on simplifying travel bookings and helping users explore destinations with clarity and confidence.",
     ],
+    url: "https://gomilesbooking.netlify.app/",
   },
   {
     title: "Walksus",
     subtitle: "E-commerce experience",
+    previewImageSrc: "",
     bullets: [
       "Product listing, wishlist, cart, and secure checkout",
       "User profiles and order tracking",

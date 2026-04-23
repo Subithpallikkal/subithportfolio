@@ -10,6 +10,11 @@ html.lenis body {
   height: auto;
 }
 
+html,
+body {
+  position: relative;
+}
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -25,6 +30,18 @@ body {
 ::selection {
   background: rgba(45, 212, 191, 0.25);
   color: #ecfeff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-enabled,
+  body.custom-cursor-enabled a,
+  body.custom-cursor-enabled button,
+  body.custom-cursor-enabled input,
+  body.custom-cursor-enabled textarea,
+  body.custom-cursor-enabled select,
+  body.custom-cursor-enabled [role="button"] {
+    cursor: none !important;
+  }
 }
 
 /* Global scrollbar styling */

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { CursorWave } from "@/components/cursor-wave";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} h-full antialiased`}>
       <body className="min-h-full bg-[#070a12] font-sans text-zinc-100">
+        <CursorWave />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

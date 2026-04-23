@@ -98,7 +98,7 @@ export function ContactSection() {
                 placeholder="Tell me a little about your project..."
               />
             </label>
-            <div className="sm:col-span-2">
+            <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row">
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -106,6 +106,13 @@ export function ContactSection() {
               >
                 {isSubmitting ? "Sending..." : `Send to ${site.contactEmail}`}
               </button>
+              <a
+                href={site.resumeSrc}
+                download={site.resumeDownloadName}
+                className="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/6 px-6 py-3 text-sm font-semibold text-zinc-100 backdrop-blur transition hover:border-teal-300/35 hover:bg-white/12"
+              >
+                Download CV
+              </a>
             </div>
             {statusMessage ? (
               <p

@@ -16,9 +16,24 @@ export function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const NAV_HEIGHT = 156;
+    const ABOUT_SWITCH_OFFSET = 550;
+
+    const onScroll = () => {
+      const aboutSection = document.getElementById("about");
+      if (!aboutSection) {
+        setScrolled(false);
+        return;
+      }
+
+      // Switch navbar UI only at a specific position inside About section.
+      const switchPoint = aboutSection.offsetTop + ABOUT_SWITCH_OFFSET;
+      setScrolled(window.scrollY + NAV_HEIGHT >= switchPoint);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
